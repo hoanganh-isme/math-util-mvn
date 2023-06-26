@@ -21,21 +21,32 @@ public class MathUtility {
     // 21 giai thừa kiểu long chứa ko đc
     // hàm chỉ cho phép n = 0..20
     // đưa n > 20; CHỬI, NÉM RA EXCEPTION
-    public static long getFactorial(int n) {
+//    public static long getFactorial(int n) {
+//
+//        if (n < 0 || n > 20) 
+//            throw new IllegalArgumentException(" Invalid n, n must be between 0..20");
+//        
+//        if (n == 0 || n == 1) 
+//            return 1;
+//        
+//
+//        long product = 1; // biến gom các tích nhân với nhau
+//        for (int i = 2; i <= n; i++) 
+//            product *= i;
+//        
+//        return product;
+//        
+//    }
+    
+        public static long getFactorial(int n) {
 
         if (n < 0 || n > 20) 
             throw new IllegalArgumentException(" Invalid n, n must be between 0..20");
         
         if (n == 0 || n == 1) 
             return 1;
+               
         
-
-        long product = 1; // biến gom các tích nhân với nhau
-        for (int i = 2; i <= n; i++) 
-            product *= i;
-        
-        return product;
-        
-    }
-
+        return n * getFactorial(n-1);
+}
 }
